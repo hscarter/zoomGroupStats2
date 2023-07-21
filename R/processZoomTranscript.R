@@ -32,9 +32,9 @@ processZoomTranscript = function(fname, recordingStartDateTime="1970-01-01 00:00
   f = readLines(fname)
   
   # there are three main pieces of data for each marked "utterance" - an id, a window of time, and the text
-  utteranceId = as.integer(f[seq(3,length(f), 3)])
-  utteranceWindow = f[seq(4,length(f), 3)]
-  utteranceText = f[seq(5,length(f), 3)]
+  utteranceId = as.integer(seq(3,length(f), 3))
+  utteranceWindow = f[seq(3,length(f), 3)]
+  utteranceText = f[seq(4,length(f), 3)]
   
   # Parse the time window into two separate elements
   utteranceStartTime = unlist(strsplit(utteranceWindow, " --> "))[seq(1, length(utteranceWindow)*2, 2)]
